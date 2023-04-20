@@ -17,6 +17,7 @@ public class UImoneyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _money = PlayerPrefs.GetInt("money");
         _moneyText.text = _money.ToString();
     }
 }
