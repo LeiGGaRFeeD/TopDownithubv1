@@ -12,8 +12,28 @@ public class BulletScript : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D col)
+    
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.GetComponent<PlayerControl>() == false)
+        {
+            Debug.Log("Touched!");
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            _speed = 0;
+            Instantiate(_effect, gameObject.transform);
+
+
+
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            InvokeRepeating("DestriyThis", 0.1f, 0);
+        }
+
+
+    }
+ //   private void OnCollisionEnter2D(Collision2D col)
+ //   {
+        /*
         //if (col.gameObject.GetComponent<PlayerControl>() == false)
         //{
         
@@ -26,13 +46,14 @@ public class BulletScript : MonoBehaviour
            
 
         gameObject.GetComponent<Collider2D>().enabled = false;
-        InvokeRepeating("DestroyThis", 0.1f, 0);
+        InvokeRepeating("DestriyThis", 0.0f, 0);
         
                   // Destroy(gameObject);
         // }
-    }
+        */
+   // }
 
-    void DestriyThis()
+   public void DestriyThis()
     {
         Destroy(gameObject);
 

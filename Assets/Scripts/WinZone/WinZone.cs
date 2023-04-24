@@ -16,6 +16,11 @@ public class WinZone : MonoBehaviour
         Debug.Log("Go to level 2");
         SceneManager.LoadScene("LevelTwo");
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerPrefs.SetInt("gun", 0);
+
+    }
     // Update is called once per frame
     void Update()
     {
