@@ -63,6 +63,7 @@ public class PlayerDetection : MonoBehaviour
         if (_canSeePlayer)
         {
             Gizmos.color = Color.green;
+            Debug.Log("PlayerSee!!!");
         //    Gizmos.DrawLine(transform.position, Player.transform.position);
         }
     }

@@ -36,5 +36,10 @@ public class CoinCollect : MonoBehaviour
     void Update()
     {
         _money = PlayerPrefs.GetInt("money");
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerPrefs.SetInt("money", 0);
+            Debug.Log("Money has been reseted");
+        }
     }
 }
