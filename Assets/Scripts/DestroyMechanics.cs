@@ -43,6 +43,7 @@ public class DestroyMechanics : MonoBehaviour
         if (_health == 0)
         {
             InvokeRepeating("Destroing", 0.5f, 0);
+            gameObject.GetComponent<Collider2D>().enabled = false;  
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             _anim.SetActive(true);
         }
