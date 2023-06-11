@@ -27,11 +27,13 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerControl>())
         {
+            DestroyBullet();
             Debug.Log("Player contact!");
         }
         if (collision.gameObject.GetComponent<PlayerControl>() == false)
         {
-            Destroy(collision.gameObject);
+           // Destroy(collision.gameObject);
+            DestroyBullet();
          //   Debug.Log("Player contact!");
         }
     }
